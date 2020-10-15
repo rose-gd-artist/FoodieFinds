@@ -7,80 +7,196 @@
       "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 2,
-        "name": "The Dandelion",
-        "address": "124 S 18th St, Philadelphia, PA 19103",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 2,
+      "name": "The Dandelion",
+      "address": "124 S 18th St, Philadelphia, PA 19103",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 3,
-        "name": "Dig",
-        "address": "1616 Chestnut St, Philadelphia, PA 19103",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 3,
+      "name": "Dig",
+      "address": "1616 Chestnut St, Philadelphia, PA 19103",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 4,
-        "name": "Vernick Food & Drink",
-        "address": "2031 Walnut St, Philadelphia, PA 19103",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 4,
+      "name": "Vernick Food & Drink",
+      "address": "2031 Walnut St, Philadelphia, PA 19103",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 5,
-        "name": "Luke's Lobster Rittenhouse",
-        "address": "130 S 17th St, Philadelphia, PA 19103",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 5,
+      "name": "Luke's Lobster Rittenhouse",
+      "address": "130 S 17th St, Philadelphia, PA 19103",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 6,
-        "name": "The Goat's Beard",
-        "address": "4201 Main St, Philadelphia, PA 19127",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 6,
+      "name": "The Goat's Beard",
+      "address": "4201 Main St, Philadelphia, PA 19127",
+      "imgUrl": "https://s3-media0.fl.yelpcdn.com/bphoto/xbwDIRNbEuCkwONYZucGEA/o.jpg"
     },
     {
-        "id": 7,
-        "name": "Dalessandro's Steaks and Hoagies",
-        "address": "600 Wendover St, Philadelphia, PA 19128",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 7,
+      "name": "Dalessandro's Steaks and Hoagies",
+      "address": "600 Wendover St, Philadelphia, PA 19128",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 8,
-        "name": "Crab Du Jour - Philadelphia",
-        "address": "822 N Broad St, Philadelphia, PA 19130",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 8,
+      "name": "Crab Du Jour - Philadelphia",
+      "address": "822 N Broad St, Philadelphia, PA 19130",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 9,
-        "name": "Suraya",
-        "address": "1528 Frankford Ave, Philadelphia, PA 19125",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 9,
+      "name": "Suraya",
+      "address": "1528 Frankford Ave, Philadelphia, PA 19125",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     {
-        "id": 10,
-        "name": "Talula's Garden",
-        "address": "210 W Washington Square, Philadelphia, PA 19106",
-        "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
+      "id": 10,
+      "name": "Talula's Garden",
+      "address": "210 W Washington Square, Philadelphia, PA 19106",
+      "imgUrl": "https://www.yelp.com/biz_photos/barbuzzo-philadelphia?select=88mJSIDPi3JUsCK2FsVJqg"
     },
     
     {   
-        "id": 11,
-        "name": "Vedge",
-        "address": "1221 Locust St, Philadelphia, PA 19107",
-        "imgUrl": "https://s3-media0.fl.yelpcdn.com/bphoto/TMFHugi3h9V7x-fDBFTpgA/o.jpg"
+      "id": 11,
+      "name": "Vedge",
+      "address": "1221 Locust St, Philadelphia, PA 19107",
+      "imgUrl": "https://s3-media0.fl.yelpcdn.com/bphoto/TMFHugi3h9V7x-fDBFTpgA/o.jpg"
     }
   ],
   "reviews": [
     {
-        "id": 1,
-        "restaurantId": 1,
-        "stars": 5,
-        "text": "Barbuzzo is a classic Italian restaurant in Rittenhouse with charming ambiance and delicious food. The roasted beet salad was scrumptious, as was the meatball pasta entrée, and the salted caramel budino was a perfect dessert finisher. We came for restaurant week lunch and got a great value, though normal prices would be a bit higher. Overall a classy place for a nice meal out next time you're craving well-crafted Italian / Mediterranean food."
-      },
-      {
-        "id": 2,
-        "restaurantId": 1,
-        "stars": 4,
-        "text": "Very solid Neapolitan pizza. Good texture. Sauce is decent, a tad salty. Nothing to rave about, but nothing to complain about. 6.8/10."
-      },
+      "id": 1,
+      "restaurantId": 1, //barbuzza
+      "stars": 5,
+      "text": "Barbuzzo is a classic Italian restaurant in Rittenhouse with charming ambiance and delicious food. The roasted beet salad was scrumptious, as was the meatball pasta entrée, and the salted caramel budino was a perfect dessert finisher. We came for restaurant week lunch and got a great value, though normal prices would be a bit higher. Overall a classy place for a nice meal out next time you're craving well-crafted Italian / Mediterranean food."
+    },
+    {
+      "id": 2,
+      "restaurantId": 1, //barbuzza
+      "stars": 4,
+      "text": "Very solid Neapolitan pizza. Good texture. Sauce is decent, a tad salty. Nothing to rave about, but nothing to complain about. 6.8/10."
+    },
+    {
+      "id": 3,
+      "restaurantId": 2, //dandelion
+      "stars": 3,
+      "text": "I want to start by saying our server was amazing. He was very attentive, he knowledgeable and was great. But the food wasn't as amazing as we were hoping. My risotto was too lemony, slightly bland and our duck was not full of flavor. The cheese platter was my favorite part of the meal. The drinks were pretty good, but I couldn't taste the alcohol in mine. I might try again but I was let down for sure.</br></br>It's also hard to find it as the sign is very small."
+    },
+    {
+      "id": 4,
+      "restaurantId": 2, //dandelion
+      "stars": 5,
+      "text": "One of the best brunches that we've been to and it was a terrific way to complete the weekend in Philly.  Everything was so flavorful and fresh."
+    },
+    {
+      "id": 5,
+      "restaurantId": 3, //dig
+      "stars": 5,
+      "text": "Ordered a classic dig bowl here post gym good quick healthy meal option. Everything in the bowl was delicious but my favorites were the broccoli and charred chicken. Workers here are awesome too. Order online and pickup"
+    },
+    {
+      "id": 6,
+      "restaurantId": 3, //dig
+      "stars": 4,
+      "text": "We ordered a family meal of charred chicken and one steak bowl. The charred chicken was good and delicious but it really felt like cooked rather than grilled.  The steak bowl was ok."
+    },
+
+    {
+      "id": 7,
+      "restaurantId": 4, //Vernick Food & Drink
+      "stars": 5,
+      "text": "Best restaurant in Philly pre Covid. Still best restaurant in Covid. Much smaller operation going on but enjoyed one of the best meals last night outside. Had the roast chicken which is simply amazing. Then had several of the vegetarian dishes which were so unique and thoughtful and delicious. What else can I say? Simply spectacular."
+    },
+    {
+      "id": 8,
+      "restaurantId": 4, //Vernick Food & Drink
+      "stars": 1,
+      "text": "I usually don't write bad reviews out of respect for off days and second chances, but vernick leaves me with no choice. Dined here for both dinner and another time for cocktails at the bar. Service was mediocre at best- Unattentive waitstaff and disgruntled bartender. Food was forgettable at best, hard pass on the chicken.  Not sure how this place has good reviews, the food was greasy and overpriced and over presented. Feels like dining in 1998. And the acoustics were reason in itself to walk right out. A million better dining options in philly, don't waste your time at this forgettable spot."
+    },
+
+    {
+      "id": 9,
+      "restaurantId": 5, //Luke's Lobster Rittenhouse
+      "stars": 5,
+      "text": "Two Words: Consistently Delicious.Tucked in a little shop en route to Rittenhouse Square, it is the perfect lunch time stop. Anytime I need a Crab Fix in the city I drop in here pick up a Jumbo Crab Roll, Blueberry Lemonade and side salad. It's Phenomenal. Take that lunch over to the park on a summer day and you have a completely immersive experience Please keep doing what your doing, its perfect."
+    },
+    {
+      "id": 10,
+      "restaurantId": 5, //Luke's Lobster Rittenhouse
+      "stars": 3,
+      "text": "I purchased the 3 roll combo, Shrimp, Crab, and Lobster. As many people mention, the value isn't quite there, but I knew the price to size ratio was small going in so it wasn't too much of a concern. The problem is each roll was pretty mediocre. They all suffered from lack of seasoning. The shrimp roll had the best flavor profile, albeit a little fishy. The employees were nice, and picking up my order was simple enough. I doubt I'll return."
+    },
+
+    {
+      "id": 11,
+      "restaurantId": 6, //The Goat's Beard
+      "stars": 5,
+      "text": "Best cocktails on main street and the food is excellent as well. Can't wait to feel safe in restaurants again, so I can come back. Also a fun and weirdly romantic bar area."
+    },
+    {
+      "id": 12,
+      "restaurantId": 6, //The Goat's Beard
+      "stars": 1,
+      "text": "I just don't get it, the place is busy but the food was terrible. My wife and Son ate here 6 months ago and we're raving about it, so we went back, the menu was completely different, I had the cole slaw appetizer which was ok $11 guys it's cabbage, moving onto my chicken salad $20 very similar to a Outback house salad for $6 just add some gristly two day old chicken and you got it. I ate a few bites and left it, when the waitress finally came around to clear the table mentioned nothing about my untouched salad just proceeded to clear the table to get us out of there to reseat another party. Jesse James used a gun Goats Beard uses Main Street Manayunk..."
+    },
+
+    {
+      "id": 13,
+      "restaurantId": 7, //Dalessandro's Steaks and Hoagies
+      "stars": 3,
+      "text": "Trying several while in town, and I have come to the conclusion it may not be taste as a preference, but rather if you like tour meat chopped or more in strands. Flavor comes from the cheese/ toppings added, meat in general is not flavored as it relies on the whiz or provolone. That all being said bread is soft and standard, meat is chopped and mushrooms and provolone adds flavor to areas it touches"
+    },
+    {
+      "id": 14,
+      "restaurantId": 7, //Dalessandro's Steaks and Hoagies
+      "stars": 3,
+      "text": "The cheesesteaks were rather terrible...the meat was crumbly like ground beef and seemed like it was leaning dry. The texture and taste of a good cheesesteak wasn't there. I was quite disappointed despite all the good reviews."
+    },
+
+    {
+      "id": 15,
+      "restaurantId": 8, //Crab Du Jour - Philadelphia
+      "stars": 2,
+      "text": "Food wasn't good!  Crab fries were dry and calamari was greasy. Maybe their seafood boils are much better!"
+    },
+    {
+      "id": 16,
+      "restaurantId": 8, //Crab Du Jour - Philadelphia
+      "stars": 4,
+      "text": "New seafood spot in town. The food was amazing. We got the family meal with their special sauce. They also have special going on where they give you a free pound of shrimp. Overall, definitely worth trying!"
+    },
+
+    {
+      "id": 17,
+      "restaurantId": 9, //Suraya
+      "stars": 2,
+      "text": "First off the hostess was the rudest most unpleasant woman I have ever encountered in hospitality.  She should definitely  be retrained or fired.  She should know ,the customer is always right and do whatever she needs to accommodate.  The sound of thre frankford el whizzing by a total of 15 times during our $468.00 dinner for 4 , was ridiculous, we couldn't hold a coversation.along with some grade</br>A lack of class  from THIS DISGRACE OF A HOSTESS  is enough to make me stay away from here, even though our server Veronics was EXCELLENT.</br>This place is mediocre at best.</br>FOR LESS MONEY, WAY BETTER FOOD AND SERVICE. DO YOURSELF A FAVOR AND GO ZAHAV OR LAZAR WOLF INSTEAD.</br></br>This place is not worth your money when we have better options in this city, Even during covid dining."
+    },
+    {
+      "id": 18,
+      "restaurantId": 9, //Suraya
+      "stars": 5,
+      "text": "The best food hands down! The staff were friendly and attentive, the ambiance was amazing. Just a great overall experience. Did I already say the food was amazing...even the dessert."
+    },
+
+    {
+      "id": 19,
+      "restaurantId": 10, //Talula's Garden
+      "stars": 4,
+      "text": "Went here pre Covid. Very cool atmosphere inside and outside. Drinks we got were OK & $$. The cheese plate app was very tiny for the price. I got a burger for dinner that was really good and I'm not a burger person."
+    },
+    {
+      "id": 20,
+      "restaurantId": 10, //Talula's Garden
+      "stars": 1,
+      "text": "A prime example of a lovely place that is ruined by snooty attitude of some staff.</br>Enough said."
+    },
+
     {
       "id": 1,
       "restaurantId": 11,
