@@ -68,26 +68,61 @@ const getRestaurants = async () => {
     const restaurants = await response.json();
     return restaurants;
 };
-const getReview = async () => {
-    const response = await fetch("http://localhost:3000/reviews");
-    const reviews = await response.json();
-    return reviews;
-};
-const createReviewFromForm = async () => {
-    const response = await fetch("http://localhost:3000/reviews");
-    const reviews = await response.json();
-    return reviews;
-};
+// const getReview = async () => {
+//     const response2 = await fetch("http://localhost:3000/reviews");
+//     const reviews = await response2.json();
+//     return reviews;
+// };
+// const createReviewFromForm = async () => {
+    
+//     const newReview = {
+//         restaurantId: 1,
+//         stars: 4,
+//         text: "cool",
+//         id: 3
+//     };
+    
+//     await fetch("http://localhost:3000/reviews", {
+//         method: "POST",
+//         body: JSON.stringify(newReview),
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//         },
+//     });
+// }; // without dynamicness
 
-const showRestaurantInfo = async () => {
-    const result = document.getElementsByClassName("result")[0];
-    const restaurantsInfo = await getRestaurants();
-    restaurantsInfo.forEach((restaurants) => {
-        let infoBox = document.createElement("div");
-        infoBox.classList.add("infoBox");
-        result.appendChild(infoBox);
-        infoBox.innerHTML += `${restaurants.name}</br>`;
-    });
-};
+// const createNewReview = async (reviewTitle, rating, content, imgURL) => {
+    
+//     const newReview = {
+//         reviewTitle,
+//         rating,
+//         content,
+//         imgURL,
+//     };
+    
+//     await fetch("http://localhost:3000/reviews", {
+//         method: "POST",
+//         body: JSON.stringify(newReview),
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//         },
+//     });
+// }; // with dynamicness
 
-showRestaurantInfo()
+
+
+
+// const showRestaurantInfo = async () => {
+//     const result = document.getElementsByClassName("result")[0];
+//     const restaurantsInfo = await getRestaurants();
+//     restaurantsInfo.forEach((restaurants) => {
+//         let infoBox = document.createElement("div");
+//         infoBox.classList.add("infoBox");
+//         result.appendChild(infoBox);
+//         infoBox.innerHTML += `${restaurants.name}</br>`;
+//     });
+// };
+
+// showRestaurantInfo()
