@@ -66,13 +66,27 @@ practice.
 const getRestaurants = async () => {
     const response = await fetch("http://localhost:3000/restaurants");
     const restaurants = await response.json();
-    return response;
+    return restaurants;
 };
+const getReview = async () => {
+    const response = await fetch("http://localhost:3000/reviews");
+    const reviews = await response.json();
+    return reviews;
+};
+const createReviewFromForm = async () => {
+    const response = await fetch("http://localhost:3000/reviews");
+    const reviews = await response.json();
+    return reviews;
+};
+
 const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     restaurantsInfo.forEach((restaurants) => {
-
+        let infoBox = document.createElement("div");
+        infoBox.classList.add("infoBox");
+        result.appendChild(infoBox);
+        infoBox.innerHTML += `${restaurants.name}</br>`;
     });
 };
 
