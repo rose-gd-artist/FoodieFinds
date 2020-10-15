@@ -72,7 +72,10 @@ const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     restaurantsInfo.forEach((restaurants) => {
-
+        let infoBox = document.createElement("div");
+        infoBox.classList.add("infoBox");
+        result.appendChild(infoBox);
+        infoBox.innerHTML += `${restaurants.name}</br>`;
     });
 };
 
