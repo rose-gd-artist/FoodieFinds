@@ -1,0 +1,117 @@
+/* 
+Minion 3 Display Regular
+font-family: minion-3-display, serif;
+font-weight: 400;
+font-style: normal;
+
+Minion 3 Display Italic
+font-family: minion-3-display, serif;
+font-weight: 400;
+font-style: italic;
+
+Minion 3 Display Bold
+font-family: minion-3-display, serif;
+font-weight: 700;
+font-style: normal;
+
+Minion 3 Display Bold Italic
+font-family: minion-3-display, serif;
+font-weight: 700;
+font-style: italic;
+
+font-family: bebas-neue-rounded, sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vw;
+    background-image: linear-gradient(180deg, #f8c642 0%, #ec7d4c 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.wrapper {
+    width: 100%;
+}
+.header {
+    color: #f4d387;
+    background-color: #ec7d4c;
+    font-family: bebas-neue-rounded, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5.5vw;
+    text-align: left;
+    padding-top: 0.3vw;
+    padding-left: 5%;
+    margin-bottom: 5vw;
+}
+
+.result {
+    width: 100%;
+    font-size: 2vw;
+}
+/* .blogEntry {
+    background-color: #fff;
+    width: 90%;
+    border-radius: 0.5vw;
+    margin: 5vw 5%;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+.postTitle {
+    color:#474750;
+    margin: 0vw 4% 1vw;
+    font-size: 2.5vw;
+    font-weight: 400;
+}
+.postAuthor {
+    color:#474750;
+    margin: -3vw 4% 2vw;
+    font-weight: 300;
+    font-size: 1.75vw;
+    font-style: italic;
+}
+.postBody {
+    color:#474750;
+    padding-top: -2vw;
+    margin: -3vw 4% 2vw;
+    font-weight: 400;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.commentBox {
+    color:#474750;
+}
+.commentButton {
+    width: 20%;
+    border-radius: 0.5vw;
+    padding: 1vw;
+    margin: 3vw 4% 1vw;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    background-color: #a6d68f;;
+}
+.postCommentsName {
+    color:#474750;
+    padding-top: -2vw;
+    margin: 3vw 6% 2vw;
+    font-weight: 500;
+}
+.postCommentsBody {
+    color:#474750;
+    padding-top: -2vw;
+    margin: -3vw 6% 0vw;
+    font-weight: 400;
+} */
