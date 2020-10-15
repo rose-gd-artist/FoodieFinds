@@ -198,14 +198,14 @@
     },
 
     {
-      "id": 1,
-      "restaurantId": 11,
+      "id": 21,
+      "restaurantId": 11, //Vedge
       "stars": 5,
       "text": "Impossibly good vegan food"
     },
     {
-      "id": 2,
-      "restaurantId": 11,
+      "id": 22,
+      "restaurantId": 11, //Vedge
       "stars": 2,
       "text": "I didn't know they meant vedge literally"
     }
