@@ -68,11 +68,11 @@ const getRestaurants = async () => {
     const restaurants = await response.json();
     return restaurants;
 };
-// const getReview = async () => {
-//     const response2 = await fetch("http://localhost:3000/reviews");
-//     const reviews = await response2.json();
-//     return reviews;
-// };
+const getReviews = async () => {
+    const response = await fetch("http://localhost:3000/reviews");
+    const reviews = await response.json();
+    return reviews;
+};
 // const createReviewFromForm = async () => {
     
 //     const newReview = {
@@ -117,11 +117,34 @@ const getRestaurants = async () => {
 const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
-    restaurantsInfo.forEach((restaurants) => {
+    const restaurantReviews = await getReviews();
+    restaurantsInfo.forEach((restaurants, reviews) => {
         let infoBox = document.createElement("div");
         infoBox.classList.add("infoBox");
         result.appendChild(infoBox);
-        infoBox.innerHTML += `${restaurants.name}</br>`;
+        let restaurantPic = document.createElement("div");
+        restaurantPic.classList.add("restaurantPic");
+        restaurantPic.style.backgroundImage = `url("${restaurants.imgUrl}")`;
+        restaurantPic.style.backgroundSize = "cover";
+        restaurantPic.style.backgroundPosition = "center";
+        restaurantPic.style.backgroundRepeat = "no-repeat";
+        infoBox.appendChild(restaurantPic);
+        let restaurantName = document.createElement("h2");
+        restaurantName.classList.add("restaurantName");
+        infoBox.appendChild(restaurantName);
+        restaurantName.innerHTML += `${restaurants.name}</br>`;
+        let restaurantAddress = document.createElement("p");
+        restaurantAddress.classList.add("restaurantAddress");
+        infoBox.appendChild(restaurantAddress);
+        restaurantAddress.innerHTML += `${restaurants.address}</br>`;
+        restaurantReviews.forEach((reviews) => {
+            if(restaurants.id === reviews.id){
+                let restaurantRating = document.createElement("p");
+                restaurantRating.classList.add("restaurantRating");
+                infoBox.appendChild(restaurantRating);
+                restaurantRating.innerHTML += `Stars: ${reviews.stars}</br>`;
+            }; // look into average sort fx of stars
+        });
     });
 };
 

@@ -29,7 +29,6 @@ font-style: normal;
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
     font-size: 2vw;
     background-image: url("images/ffPattern2.svg"), linear-gradient(180deg, #f8c642 0%, #ec7d4c 100%);
     background-repeat: repeat, no-repeat;
@@ -57,7 +56,7 @@ body {
     width: 100%;
     font-size: 2vw;
 }
-/* .blogEntry {
+.infoBox {
     background-color: #fff;
     width: 90%;
     border-radius: 0.5vw;
@@ -65,20 +64,37 @@ body {
     padding-top: 2vw;
     padding-bottom: 2vw;
 }
+.restaurantPic {
+    margin-bottom: 2vw;
+    width: 100%;
+    height: 40vw;
+}
 
-.postTitle {
-    color:#474750;
+.restaurantName {
+    color:#bd4d00;
     margin: 0vw 4% 1vw;
+    font-size: 4vw;
+    font-family: minion-3-display, serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.restaurantAddress {
+    color:#bd4d00;
+    margin: 1vw 4% 2vw;
     font-size: 2.5vw;
+    font-family: minion-3-display, serif;
     font-weight: 400;
+    font-style: normal;
 }
-.postAuthor {
-    color:#474750;
-    margin: -3vw 4% 2vw;
-    font-weight: 300;
-    font-size: 1.75vw;
-    font-style: italic;
+.restaurantRating {
+    color:#bd4d00;
+    margin: 1vw 4% 2vw;
+    font-size: 2.75vw;
+    font-family: minion-3-display, serif;
+    font-weight: 400;
+    font-style: normal;
 }
+/*
 .postBody {
     color:#474750;
     padding-top: -2vw;
