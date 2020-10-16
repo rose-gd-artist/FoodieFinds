@@ -137,7 +137,7 @@ const showRestaurantInfo = async () => {
         restaurantAddress.classList.add("restaurantAddress");
         infoBox.appendChild(restaurantAddress);
         restaurantAddress.innerHTML += `${restaurants.address}</br>`;
-        restaurantReviews.forEach((reviews) => {
+        restaurantReviews.map((reviews) => {
             if(restaurants.id === reviews.id){
                 let restaurantRating = document.createElement("p");
                 restaurantRating.classList.add("restaurantRating");
@@ -145,6 +145,15 @@ const showRestaurantInfo = async () => {
                 restaurantRating.innerHTML += `Stars: ${reviews.stars}</br>`;
             }; // look into average sort fx of stars
         });
+
+        // restaurantReviews.forEach((reviews) => {
+        //     if(restaurants.id === reviews.id){
+        //         let restaurantRating = document.createElement("p");
+        //         restaurantRating.classList.add("restaurantRating");
+        //         infoBox.appendChild(restaurantRating);
+        //         restaurantRating.innerHTML += `Stars: ${reviews.stars}</br>`;
+        //     }; // look into average sort fx of stars
+        // });
     });
 };
 
