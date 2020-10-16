@@ -111,6 +111,12 @@ const getReviews = async () => {
 //     });
 // }; // with dynamicness
 
+// arr.reduce( async ( a, b ) => a + b, 0 ) / arr.length;
+    
+// const answer = ratingAverage( [ 4, 4, 5, 6, 6 ] ); // 5
+
+// console.log(answer);
+
 
 
 
@@ -119,9 +125,11 @@ const showRestaurantInfo = async () => {
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
     restaurantsInfo.forEach((restaurants, reviews) => {
+
         let infoBox = document.createElement("div");
         infoBox.classList.add("infoBox");
         result.appendChild(infoBox);
+
         let restaurantPic = document.createElement("div");
         restaurantPic.classList.add("restaurantPic");
         restaurantPic.style.backgroundImage = `url("${restaurants.imgUrl}")`;
@@ -129,22 +137,71 @@ const showRestaurantInfo = async () => {
         restaurantPic.style.backgroundPosition = "center";
         restaurantPic.style.backgroundRepeat = "no-repeat";
         infoBox.appendChild(restaurantPic);
+
         let restaurantName = document.createElement("h2");
         restaurantName.classList.add("restaurantName");
         infoBox.appendChild(restaurantName);
         restaurantName.innerHTML += `${restaurants.name}</br>`;
+
         let restaurantAddress = document.createElement("p");
         restaurantAddress.classList.add("restaurantAddress");
         infoBox.appendChild(restaurantAddress);
         restaurantAddress.innerHTML += `${restaurants.address}</br>`;
-        restaurantReviews.map((reviews) => {
-            if(restaurants.id === reviews.id){
-                let restaurantRating = document.createElement("p");
-                restaurantRating.classList.add("restaurantRating");
-                infoBox.appendChild(restaurantRating);
-                restaurantRating.innerHTML += `Stars: ${reviews.stars}</br>`;
-            }; // look into average sort fx of stars
-        });
+
+        let starList = reviews.stars;
+        console.log(starList);
+        // let ratingAverage =
+        let sum = starList.reduce((total, amount) => (total + amount));
+            let average = starList.reduce((total, amount, index, array) => {
+                total += amount;
+                if (index === starList.length - 1) {
+                    return total / starList.length;
+                } else {
+                    return total;
+                }
+
+            });
+        console.log(sum);
+        //let average = (sum / starList.length);
+        console.log(average);
+        
+        // restaurantReviews.map((reviews) => {
+        //     let starList = reviews.stars;
+        //     //console.log(starList);
+        //     // let ratingAverage =
+        //     let sum = starList.reduce((total, amount) => (total + amount));
+        //         let average = starList.reduce((total, amount, index, array) => {
+        //             total += amount;
+        //             if (index === starList.length - 1) {
+        //                 return total / starList.length;
+        //             } else {
+        //                 return total;
+        //             }
+
+        //         });
+        //     console.log(sum);
+        //     //let average = (sum / starList.length);
+        //     console.log(average);
+        //     //console.log(ratingAverage);
+        //     if(restaurants.id === reviews.id){
+        //         let restaurantRating = document.createElement("p");
+        //         restaurantRating.classList.add("restaurantRating");
+        //         infoBox.appendChild(restaurantRating);
+        //         //arr.reduce( async ( a, b ) => a + b, 0 ) / arr.length;
+        //         //restaurantRating.innerHTML += `Stars: ${starList}</br>`;
+        //     }; // look into average sort fx of stars
+        //});
+
+        // var sum = totalOrbsArr.reduce((total, amount) => total + amount);
+        //     var average = totalOrbsArr.reduce((total, amount, index, array) => {
+        //         total += amount;
+        //         if (index === totalOrbsArr.length - 1) {
+        //             return total / totalOrbsArr.length;
+        //         } else {
+        //             return total;
+        //         }
+
+        //     })
 
         // restaurantReviews.forEach((reviews) => {
         //     if(restaurants.id === reviews.id){
