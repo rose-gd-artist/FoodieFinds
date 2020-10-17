@@ -117,7 +117,7 @@ const getReviews = async () => {
 
 // console.log(answer);
 
-function average(nums){
+const average = async (nums) => {
     return nums.reduce((a, b) => (a + b)) / nums.length;
 };
 
@@ -126,7 +126,6 @@ const showRestaurantInfo = async () => {
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
     let infoBox;
-    let starsArray;
     restaurantsInfo.forEach((restaurants, reviews) => {
 
         infoBox = document.createElement("div");
@@ -151,21 +150,50 @@ const showRestaurantInfo = async () => {
         infoBox.appendChild(restaurantAddress);
         restaurantAddress.innerHTML += `${restaurants.address}</br>`;
 
-        restaurantReviews.forEach((reviews) => {
-            if(restaurants.id === reviews.restaurantId){
-                let restaurantAverageRating = document.createElement("p");
-                restaurantAverageRating.classList.add("restaurantAverageRating");
-                infoBox.appendChild(restaurantAverageRating);
-                restaurantAverageRating.innerHTML += `Stars: ${reviews.stars}</br>`;
+        //let starsArray = [];
+
+        // restaurantReviews.map((reviews, restaurants) => {
+        //     if(this[reviews.restaurantId] === this[restaurants.id]){
+        //         const starListing = reviews.stars;
+        //         console.log(reviews.stars);
+        //     };
+        // });
+        
+        restaurantReviews.map((reviews, restaurants) => {
+            if(this[reviews.restaurantId] === this[restaurants.id]){
+                for(stars in reviews){
+                    console.log(reviews[stars]);
+                }
+                //const starListing = reviews.stars;
+                //console.log(reviews.stars);
             };
         });
 
+
+        // restaurantReviews.forEach((reviews) => {
+        //         let avStars = reviews.stars;
+        //         //avStars.map(avStars);
+        //         console.log(avStars);
+        //         //starsArray.push((reviews.stars));
+        //         //console.log(starsArray);
+        // });
+
         // restaurantReviews.forEach((reviews) => {
         //     if(restaurants.id === reviews.restaurantId){
-        //         let restaurantAverageRating = document.createElement("p");
-        //         restaurantAverageRating.classList.add("restaurantAverageRating");
-        //         infoBox.appendChild(restaurantAverageRating);
-        //         restaurantAverageRating.innerHTML += `Stars: ${reviews.stars}</br>`;
+        //         let avStars = reviews.stars;
+        //         //avStars.map(avStars);
+        //         console.log(avStars);
+        //         //starsArray.push((reviews.stars));
+        //         //console.log(starsArray);
+        //     };
+        // });
+
+        // restaurantReviews.forEach((reviews) => {
+        //     if(restaurants.id === reviews.restaurantId){
+        //         let restaurantIndividualRating = document.createElement("p");
+        //         restaurantIndividualRating.classList.add("restaurantIndividualRating");
+        //         infoBox.appendChild(restaurantIndividualRating);
+        //         restaurantIndividualRating.innerHTML += `Stars: ${reviews.stars}</br>`;
         //     };
         // }); // works - prints the review stars 
     });

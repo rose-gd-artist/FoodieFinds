@@ -93,6 +93,14 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+.restaurantIndividualRating {
+    color:#bd4d00;
+    margin: 1vw 4% 2vw;
+    font-size: 2.75vw;
+    font-family: minion-3-display, serif;
+    font-weight: 400;
+    font-style: normal;
+}
 /*
 .postBody {
     color:#474750;
