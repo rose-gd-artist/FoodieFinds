@@ -142,15 +142,17 @@ const showRestaurantInfo = async () => {
 
         let starFilter = restaurantReviews.filter((reviews) => {
             return restaurants.id === reviews.restaurantId;
-        }).map((reviews) => {
+        });
+        let starMapped = starFilter.map((reviews) => {
             return reviews.stars;
-        })
+        });
         
-        let starAverageRating = starFilter.reduce((a, b) => (a + b), 0) / starFilter.length;
+        let starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
 
         console.log(starFilter);
+        console.log(starMapped);
 
-        let starAverageRating2 = restaurants.starFilter;
+        let starAverageRating2 = restaurants.starMapped;
 
         console.log(starAverageRating);
         console.log(starAverageRating2);
@@ -160,16 +162,13 @@ const showRestaurantInfo = async () => {
         infoBox.appendChild(restaurantAverageRating);
         restaurantAverageRating.innerHTML = `Overall Star Rating: ${starAverageRating}</br>`;
 
-
-        // const individualReviewStars = restaurantReviews.forEach((reviews) => {
-        //     if(restaurants.id === reviews.restaurantId){
-        //         let restaurantIndividualRating = document.createElement("p");
-        //         restaurantIndividualRating.classList.add("restaurantIndividualRating");
-        //         infoBox.appendChild(restaurantIndividualRating);
-        //         restaurantIndividualRating.innerHTML += `Stars: ${reviews.stars}</br>
-        //                                                  ${reviews.text}</br>`;
-        //     };
-        // }); // works - prints the review stars 
+        const individualReviewStars = starFilter.map((reviews) => {
+                let restaurantIndividualRating = document.createElement("p");
+                restaurantIndividualRating.classList.add("restaurantIndividualRating");
+                infoBox.appendChild(restaurantIndividualRating);
+                restaurantIndividualRating.innerHTML += `Stars: ${reviews.stars}</br>
+                                                         ${reviews.text}</br>`;
+        }); 
     });
 };
 
