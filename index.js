@@ -116,11 +116,13 @@ let starAverageRating;
 let starAverageRating2;
 let ratingArrayMaker = [];
 let ratingSorter;
+let boxSorter;
 
 const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
+    restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
     restaurantsInfo.map((restaurants, reviews) => {
 
         let starFilter = restaurantReviews.filter((reviews) => {
@@ -135,7 +137,6 @@ const showRestaurantInfo = async () => {
         infoBox = document.createElement("div");
         infoBox.classList.add("infoBox");
         result.appendChild(infoBox);
-        //infoBox.sort((a, b) => b.starAverageRating - a.starAverageRating);
 
         let restaurantPic = document.createElement("div");
         restaurantPic.classList.add("restaurantPic");
@@ -155,31 +156,6 @@ const showRestaurantInfo = async () => {
         infoBox.appendChild(restaurantAddress);
         restaurantAddress.innerHTML += `${restaurants.address}</br>`;
 
-        // let starFilter = restaurantReviews.filter((reviews) => {
-        //     return restaurants.id === reviews.restaurantId;
-        // });
-        // let starMapped = starFilter.map((reviews) => {
-        //     return reviews.stars;
-        // });
-        
-        // starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length; //sort((a, b) => (b - a));
-
-        // let starMapped2 = [];
-        // let sortingArray = starFilter.push((starAverageRating) => {
-        //     starMapped2.map(starAverageRating);
-        // });
-
-        //starMapped2.push(starAverageRating);
-
-
-        //console.log(starFilter);
-        //console.log(starMapped);
-        // console.log(starMapped2);
-        // console.log(sortingArray);
-        //console.log(starAverageRating);
-        //console.log(ratingGrabber);
-        //console.log(ratingSorter);
-
         let restaurantAverageRating = document.createElement("p");
         restaurantAverageRating.classList.add("restaurantAverageRating");
         infoBox.appendChild(restaurantAverageRating);
@@ -195,9 +171,12 @@ const showRestaurantInfo = async () => {
         
         ratingArrayMaker.push(starAverageRating);
         ratingSorter = ratingArrayMaker.sort((a, b) => b - a);
+        //restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
     });
+    //restaurantsInfo.sort((a, b) => b.ratingArrayMaker - a.ratingArrayMaker);
     console.log(ratingArrayMaker);
     console.log(ratingSorter);
+    //console.log(boxSorter);
 };
 
 showRestaurantInfo()
