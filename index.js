@@ -111,16 +111,31 @@ const getReviews = async () => {
 //     });
 // }; // with dynamicness
 
+let infoBox;
+let starAverageRating;
+let starAverageRating2;
+let ratingArrayMaker = [];
+let ratingSorter;
+
 const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
-    let infoBox;
     restaurantsInfo.map((restaurants, reviews) => {
+
+        let starFilter = restaurantReviews.filter((reviews) => {
+            return restaurants.id === reviews.restaurantId;
+        });
+        let starMapped = starFilter.map((reviews) => {
+            return reviews.stars;
+        });
+        
+        starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
 
         infoBox = document.createElement("div");
         infoBox.classList.add("infoBox");
         result.appendChild(infoBox);
+        //infoBox.sort((a, b) => b.starAverageRating - a.starAverageRating);
 
         let restaurantPic = document.createElement("div");
         restaurantPic.classList.add("restaurantPic");
@@ -140,22 +155,30 @@ const showRestaurantInfo = async () => {
         infoBox.appendChild(restaurantAddress);
         restaurantAddress.innerHTML += `${restaurants.address}</br>`;
 
-        let starFilter = restaurantReviews.filter((reviews) => {
-            return restaurants.id === reviews.restaurantId;
-        });
-        let starMapped = starFilter.map((reviews) => {
-            return reviews.stars;
-        });
+        // let starFilter = restaurantReviews.filter((reviews) => {
+        //     return restaurants.id === reviews.restaurantId;
+        // });
+        // let starMapped = starFilter.map((reviews) => {
+        //     return reviews.stars;
+        // });
         
-        let starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
+        // starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length; //sort((a, b) => (b - a));
 
-        console.log(starFilter);
-        console.log(starMapped);
+        // let starMapped2 = [];
+        // let sortingArray = starFilter.push((starAverageRating) => {
+        //     starMapped2.map(starAverageRating);
+        // });
 
-        let starAverageRating2 = restaurants.starMapped;
+        //starMapped2.push(starAverageRating);
 
-        console.log(starAverageRating);
-        console.log(starAverageRating2);
+
+        //console.log(starFilter);
+        //console.log(starMapped);
+        // console.log(starMapped2);
+        // console.log(sortingArray);
+        //console.log(starAverageRating);
+        //console.log(ratingGrabber);
+        //console.log(ratingSorter);
 
         let restaurantAverageRating = document.createElement("p");
         restaurantAverageRating.classList.add("restaurantAverageRating");
@@ -168,8 +191,13 @@ const showRestaurantInfo = async () => {
                 infoBox.appendChild(restaurantIndividualRating);
                 restaurantIndividualRating.innerHTML += `Stars: ${reviews.stars}</br>
                                                          ${reviews.text}</br>`;
-        }); 
+        });
+        
+        ratingArrayMaker.push(starAverageRating);
+        ratingSorter = ratingArrayMaker.sort((a, b) => b - a);
     });
+    console.log(ratingArrayMaker);
+    console.log(ratingSorter);
 };
 
 showRestaurantInfo()
