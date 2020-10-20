@@ -92,66 +92,143 @@ const getReviews = async () => {
 //     });
 // }; // without dynamicness
 
-// const createNewReview = async (reviewTitle, rating, content, imgURL) => {
+const createNewReview = async (restaurantId, stars, text, id) => {
     
-//     const newReview = {
-//         reviewTitle,
-//         rating,
-//         content,
-//         imgURL,
-//     };
+    const newReview = {
+        restaurantId,
+        stars,
+        text,
+        id,
+    };
     
-//     await fetch("http://localhost:3000/reviews", {
-//         method: "POST",
-//         body: JSON.stringify(newReview),
-//         headers: {
-//             Accept: "application/json",
-//             "Content-Type": "application/json",
-//         },
-//     });
-// }; // with dynamicness
+    await fetch("http://localhost:3000/reviews", {
+        method: "POST",
+        body: JSON.stringify(newReview),
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+    });
+}; // with dynamicness
 
-let starFilter;
-let starMapped;
-let infoBox;
-let starAverageRating;
-let starAverageRating2;
-let ratingArrayMaker = [];
-let ratingSorter;
-let boxSorter;
-//let restaurantSorter;
+
+
+// const showRestaurantInfo = async () => {
+//     const result = document.getElementsByClassName("result")[0];
+//     const restaurantsInfo = await getRestaurants();
+//     const restaurantReviews = await getReviews();
+//     restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
+    
+//     // const restaurantWithOverallRatings = async () => {
+        
+//     //     restaurantsInfo.map((restaurants) => {
+
+
+//     //     const starFilter = restaurantReviews.filter((reviews) => {
+//     //         return restaurants.id === reviews.restaurantId;
+//     //     });
+//     //     const starMapped = starFilter.map((reviews) => {
+//     //         return reviews.stars;
+//     //     });
+        
+//     //     const starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
+
+//     //     });
+//     // };
+
+//     // restaurantWithOverallRatings() // left out for now
+
+//     // const restaurantSorter = () => {
+
+//     //     const certainRestaurant = restaurantsInfo.forEach((restaurants) => {
+
+//     //         const starFilter = restaurantReviews.filter((reviews) => {
+//     //             return restaurants.id === reviews.restaurantId;
+//     //         });
+//     //         const starMapped = starFilter.map((reviews) => {
+//     //             return reviews.stars;
+//     //         });
+
+//     //         const starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
+
+//     //         return `<p>${starAverageRating}</p>`;
+        
+//     //     });
+
+//     //     const sortedAndAveragedRestaurant = restaurantsInfo.forEach((restaurants) => {
+
+//     //         restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
+
+//     //     });
+
+//     // };
+
+//     // restaurantSorter(); // left out for now
+
+//     restaurantsInfo.map((restaurants, reviews) => {
+
+//         starFilter = restaurantReviews.filter((reviews) => {
+//             return restaurants.id === reviews.restaurantId;
+//         });
+//         starMapped = starFilter.map((reviews) => {
+//             return reviews.stars;
+//         });
+        
+//         starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
+
+//         infoBox = document.createElement("div");
+//         infoBox.classList.add("infoBox");
+//         result.appendChild(infoBox);
+
+//         let restaurantPic = document.createElement("div");
+//         restaurantPic.classList.add("restaurantPic");
+//         restaurantPic.style.backgroundImage = `url("${restaurants.imgUrl}")`;
+//         restaurantPic.style.backgroundSize = "cover";
+//         restaurantPic.style.backgroundPosition = "center";
+//         restaurantPic.style.backgroundRepeat = "no-repeat";
+//         infoBox.appendChild(restaurantPic);
+
+//         let restaurantName = document.createElement("h2");
+//         restaurantName.classList.add("restaurantName");
+//         infoBox.appendChild(restaurantName);
+//         restaurantName.innerHTML += `${restaurants.name}</br>`;
+
+//         let restaurantAddress = document.createElement("p");
+//         restaurantAddress.classList.add("restaurantAddress");
+//         infoBox.appendChild(restaurantAddress);
+//         restaurantAddress.innerHTML += `${restaurants.address}</br>`;
+
+//         let restaurantAverageRating = document.createElement("p");
+//         restaurantAverageRating.classList.add("restaurantAverageRating");
+//         infoBox.appendChild(restaurantAverageRating);
+//         restaurantAverageRating.innerHTML = `Overall Star Rating: ${starAverageRating}</br>`;
+
+//         const individualReviewStars = starFilter.map((reviews) => {
+//                 let restaurantIndividualRating = document.createElement("p");
+//                 restaurantIndividualRating.classList.add("restaurantIndividualRating");
+//                 infoBox.appendChild(restaurantIndividualRating);
+//                 restaurantIndividualRating.innerHTML += `Stars: ${reviews.stars}</br>
+//                                                          ${reviews.text}</br>`;
+//         });
+
+//         let ratingArrayMaker = [];
+//         ratingArrayMaker.push(starAverageRating);
+//         let ratingSorter = ratingArrayMaker.sort((a, b) => b - a);
+//         //restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
+//         let sortingHat = restaurantsInfo.sort((a, b) => b - a);
+//         console.log(sortingHat);
+
+//     });
+// };
+
+// showRestaurantInfo()
+
 
 const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
-    //restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
-
-    restaurantsInfo.map((restaurants, reviews) => {
-
-
-        starFilter = restaurantReviews.filter((reviews) => {
-            return restaurants.id === reviews.restaurantId;
-        });
-        starMapped = starFilter.map((reviews) => {
-            return reviews.stars;
-        });
-        
-        starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
-
-        //restaurants = { ...restaurants, starAverageRating};
-        //console.log(restaurants);
-        //console.log(restaurantsInfo);
-
-        let restaurantSorter = restaurants.sort((a, b) => a.starAverageRating - b.starAverageRating);
-        
-        console.log(restaurantSorter);
-        //console.log(restaurantsToSort);
-    });
-
-    //restaurantSorter = restaurants.sort((a, b) => b.starAverageRating - a.starAverageRating);
-
-    //console.log(restaurants);
+    restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
 
     restaurantsInfo.map((restaurants, reviews) => {
 
@@ -163,8 +240,6 @@ const showRestaurantInfo = async () => {
         });
         
         starAverageRating = starMapped.reduce((a, b) => (a + b), 0) / starMapped.length;
-
-        //restaurantsInfo.starAverageRating = starAverageRating.value;
 
         infoBox = document.createElement("div");
         infoBox.classList.add("infoBox");
@@ -200,19 +275,56 @@ const showRestaurantInfo = async () => {
                 restaurantIndividualRating.innerHTML += `Stars: ${reviews.stars}</br>
                                                          ${reviews.text}</br>`;
         });
-        
+
+        let ratingArrayMaker = [];
         ratingArrayMaker.push(starAverageRating);
-        ratingSorter = ratingArrayMaker.sort((a, b) => b - a);
-        //restaurantsInfo.sort((a, b) => b.starAverageRating - a.starAverageRating);
+        let ratingSorter = ratingArrayMaker.sort((a, b) => b - a);
+        let sortingHat = restaurantsInfo.sort((a, b) => b - a);
+        console.log(sortingHat);
 
-        //restaurantsInfo[starAverageRating] = starAverageRating.value;
     });
-
-
-    //restaurantsInfo.sort((a, b) => b.ratingArrayMaker - a.ratingArrayMaker);
-    console.log(ratingArrayMaker);
-    console.log(ratingSorter);
-    //console.log(boxSorter);
 };
 
 showRestaurantInfo()
+
+
+
+
+
+
+
+// watching teacher lecture
+// const showRestaurantInfo = async () => {
+//     const result = document.getElementsByClassName("result")[0];
+//     const restaurantsInfo = await getRestaurants();
+//     const restaurantReviews = await getReviews();
+
+//         const restaurantWithOverallRatings = async (restaurantsArray) => {
+        
+//             const restaurantSifter = restaurantsArray.map((restaurants) => {
+
+//                 const starFilter = restaurantReviews.filter((reviews) => {
+//                     return restaurants.id === reviews.restaurantId;
+//                 });
+//                 const starMapper = starFilter.map((reviews) => {
+//                     return reviews.stars;
+//                 });
+        
+//                 const starAverageRating = starMapper.reduce((a, b) => (a + b), 0) / starMapper.length;
+
+//                 console.log(starAverageRating);
+//                 //console.log(restaurantsAfterSifter);
+//                 console.log(restaurantsArray);
+//             });
+
+//             restaurantSifter.sort((a, b) => b.starAverageRating - a.starAverageRating);
+
+//             //console.log(restaurantSifter);
+            
+//         };
+
+//         restaurantWithOverallRatings(restaurantsInfo)
+
+// };
+
+// showRestaurantInfo() // still working on this version
