@@ -111,6 +111,70 @@ const createNewReview = async (restaurantId, stars, text, id) => {
     });
 }; // with dynamicness
 
+const createNewReview2 = async (restaurantId, stars, text, id) => {
+    
+    const newReview = {
+        restaurantId,
+        stars,
+        text,
+        id,
+    };
+    
+    await fetch("http://localhost:3000/reviews", {
+        method: "POST",
+        body: JSON.stringify(newReview),
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+    });
+    showRestaurantInfo(); // for immediate page change without page refresh!!!
+    console.log("success");
+}; // with dynamicness
+
+const NewRestaurant = async (name, address, imgUrl) => {
+    
+    const newPlace = {
+        name,
+        address,
+        imgUrl,
+    };
+    
+    await fetch("http://localhost:3000/restaurants", {
+        method: "POST",
+        body: JSON.stringify(newPlace),
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+    });
+    showRestaurantInfo(); // for immediate page change without page refresh!!!
+    console.log("success");
+}; // with dynamicness
+
+
+const createNewRestaurant = async (name, address, imgUrl) => {
+    
+    const newPlace = {
+        name,
+        address,
+        imgUrl,
+    };
+    
+    await fetch("http://localhost:3000/restaurants", {
+        method: "POST",
+        body: JSON.stringify(newPlace),
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+        },
+    });
+
+    console.log("success");
+    showRestaurantInfo(); // for immediate page change without page refresh!!!
+}; // with dynamicness
+
+
 
 const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
