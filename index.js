@@ -111,13 +111,13 @@ const createNewReview = async (restaurantId, stars, text, id) => {
     });
 }; // with dynamicness
 
-const createNewReview2 = async (restaurantId, stars, text, id) => {
+const createNewReview2 = async (id, restaurantId, stars, text) => {
     
     const newReview = {
+        id,
         restaurantId,
         stars,
         text,
-        id,
     };
     
     await fetch("http://localhost:3000/reviews", {
@@ -180,6 +180,7 @@ const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
+    //const postReviews = await createNewReview2();
         
         const restaurantWithOverallRatings = restaurantsInfo.map((restaurants) => {
 
@@ -237,6 +238,63 @@ const showRestaurantInfo = async () => {
                     restaurantIndividualRating.innerHTML += `Stars: ${reviews.stars}</br>
                                                                 ${reviews.text}</br>`;
             });
+
+            let reviewButton = document.createElement("div");
+            reviewButton.classList.add("reviewButton");
+            reviewButton.classList.add("show");
+            reviewButton.innerHTML = "Review";
+            infoBox.appendChild(reviewButton);
+            reviewButton.addEventListener("click", () => {
+                userReviewForm.classList.toggle("show");
+            });
+
+            let userReviewForm = document.createElement("div");
+            userReviewForm.classList.add("userReviewForm");
+            userReviewForm.classList.add("hide");
+            infoBox.appendChild(userReviewForm);
+
+            let userReviewFormStars = document.createElement("div");
+            userReviewFormStars.classList.add("userReviewFormStars");
+            userReviewFormStars.innerHTML = "Stars: ";
+            userReviewForm.appendChild(userReviewFormStars);
+
+            let userStars = document.createElement("input");
+            userStars.classList.add("userStars");
+            userStars.setAttribute("placeholder", "1 to 5");
+            userStars.setAttribute("type", "number");
+            userStars.setAttribute("min", "1");
+            userStars.setAttribute("max", "5");
+            userReviewFormStars.appendChild(userStars);
+
+            let reviewHeader = document.createElement("div");
+            reviewHeader.classList.add("reviewHeader");
+            reviewHeader.innerHTML = "Write your own review...";
+            userReviewForm.appendChild(reviewHeader);
+
+            let userReviewFormText = document.createElement("textarea");
+            userReviewFormText.classList.add("userReviewFormText");
+            userReviewFormText.setAttribute("placeholder", "Type in your opinion");
+            userReviewFormText.setAttribute("type", "textarea");
+            userReviewFormText.setAttribute("maxlength", "5000");
+            userReviewFormText.setAttribute("rows", "50");
+            userReviewFormText.setAttribute("cols", "10");
+            userReviewFormText.setAttribute("onfocus", "this.value=''");
+            userReviewFormText.setAttribute("draggable", "false");
+            userReviewForm.appendChild(userReviewFormText);
+
+            let submitForm = document.createElement("input");
+            submitForm.classList.add("submitForm");
+            submitForm.setAttribute("type", "submit");
+            submitForm.setAttribute("value", "Submit");
+            userReviewForm.appendChild(submitForm);
+            submitForm.addEventListener("click", () => {
+                //const postReviews = await createNewReview2();
+                //createNewReview2();
+                createNewReview2(userStars.value, userReviewFormText.value);
+            });
+
+
+
     
 
 
