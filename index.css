@@ -101,6 +101,92 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+.reviewButton {
+    color:#fff;
+    width: 5.75vw;
+    height: 2vw;
+    margin: 2vw 4% 1vw;
+    background-color: #ec7d4c;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 0.5vw 1vw 1.2vw;
+    border-radius: 0.5vw;
+}
+.reviewHeader {
+    color:#bd4d00;
+    margin: 1vw 4% -2vw;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.userReviewFormStars {
+    color:#bd4d00;
+    margin: 1vw 4% 1vw;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.userStars {
+    color:#bd4d00;
+    margin: 1vw 0% 1vw;
+    width: 6vw;
+    height: 3vw;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0vw 1vw;
+    outline-color: #793100;
+    border-radius: 0.5vw;
+}
+.reviewHeader {
+    color:#bd4d00;
+    margin: 1vw 4% -0.5vw;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 600;
+    font-style: normal;
+}
+.userReviewFormText {
+    color:#bd4d00;
+    margin: 1vw 4%;
+    width: 79vw;
+    height: 20vw;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: auto;
+    resize: none;
+    padding: 0.5vw 1vw;
+    outline-color: #793100;
+    border-radius: 0.5vw;
+}
+.submitForm {
+    color:#f8c642;
+    width: 8.5vw;
+    height: 4vw;
+    margin: 1vw 4%;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 0.5vw 1vw;
+    outline-color:#f4d387;
+    border-radius: 0.5vw;
+    background-color: #793100;
+    border: none;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
 /*
 .postBody {
     color:#474750;
