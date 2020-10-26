@@ -234,6 +234,7 @@ const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
+    result.innerHTML = "";
         
         const restaurantWithOverallRatings = restaurantsInfo.map((restaurants) => {
 
@@ -347,7 +348,7 @@ const showRestaurantInfo = async () => {
                 const reviewText = document.getElementsByClassName("userReviewFormText")[0].value;
                 const reviewStars = document.getElementsByClassName("userStars")[0].value;
                 const nextReview = createNewReview2(restaurants.id, parseInt(reviewStars), reviewText);
-                return restaurantIndividualRating.innerHTML += nextReview;
+                showRestaurantInfo();
             };
             submitForm.addEventListener("click", newestReview);
 
