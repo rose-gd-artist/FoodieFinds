@@ -197,6 +197,12 @@ const getReviews = async () => {
     return reviews;
 };
 
+// const getReviewsJust4ThisPlace = async (restaurantId) => {
+//     const response = await fetch(`"http://localhost:3000/restaurants/${restaurantId}/reviews"`);
+//     const reviews = await response.json();
+//     return reviews;
+// };
+
 const createNewReview2 = async (restaurantId, stars, text) => {
     
     const newReview = {
@@ -336,13 +342,14 @@ const showRestaurantInfo = async () => {
             submitForm.setAttribute("type", "submit");
             submitForm.setAttribute("value", "Submit");
             userReviewForm.appendChild(submitForm);
-            submitForm.addEventListener("click", () => {
-
-                const nextReview = createNewReview2(restaurants.id, userStars.value, userReviewFormText.value);
-                return nextReview;
-            }); 
-
-
+            const newestReview = async (event) => {
+                event.preventDefault();
+                const reviewText = document.getElementsByClassName("userReviewFormText")[0].value;
+                const reviewStars = document.getElementsByClassName("userStars")[0].value;
+                const nextReview = createNewReview2(restaurants.id, parseInt(reviewStars), reviewText);
+                return restaurantIndividualRating.innerHTML += nextReview;
+            };
+            submitForm.addEventListener("click", newestReview);
 
 
         });
