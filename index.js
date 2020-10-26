@@ -63,16 +63,27 @@ practice.
 //     Make sure that /usr/local/bin is in your $PATH. 
 
 
-const getRestaurants = async () => {
-    const response = await fetch("http://localhost:3000/restaurants");
-    const restaurants = await response.json();
-    return restaurants;
-};
-const getReviews = async () => {
-    const response = await fetch("http://localhost:3000/reviews");
-    const reviews = await response.json();
-    return reviews;
-};
+// const getRestaurants = async () => {
+//     const response = await fetch("http://localhost:3000/restaurants");
+//     const restaurants = await response.json();
+//     return restaurants;
+// };
+
+// const getReviews = async () => {
+//     const response = await fetch("http://localhost:3000/reviews");
+//     const reviews = await response.json();
+//     return reviews;
+// };
+
+// const getCommentsByPostId = async (postId) => {
+//     const response = await fetch(
+//       `https://jsonplaceholder.typicode.com/posts/${postId}/comments`
+//     );
+//     const comments = await response.json();
+//     return comments;
+// };
+
+
 // const createReviewFromForm = async () => {
     
 //     const newReview = {
@@ -92,13 +103,106 @@ const getReviews = async () => {
 //     });
 // }; // without dynamicness
 
-const createNewReview = async (restaurantId, stars, text, id) => {
+// const createNewReview = async (id, restaurantId, stars, text) => {
+    
+//     const newReview = {
+//         id, 
+//         restaurantId,
+//         stars,
+//         text,
+//     };
+    
+//     await fetch("http://localhost:3000/reviews", {
+//         method: "POST",
+//         body: JSON.stringify(newReview),
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//         },
+//     });
+// }; // with dynamicness
+
+// const createNewReview2 = async (restaurantId, stars, text) => {
+    
+//     const newReview = {
+//         restaurantId,
+//         stars,
+//         text,
+//     };
+    
+//     await fetch("http://localhost:3000/reviews", {
+//         method: "POST",
+//         body: JSON.stringify(newReview),
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//         },
+//     });
+//     getReviewValues();
+//     showRestaurantInfo(); // for immediate page change without page refresh!!!
+//     console.log("success");
+// }; // with dynamicness
+
+// const NewRestaurant = async (name, address, imgUrl) => {
+    
+//     const newPlace = {
+//         name,
+//         address,
+//         imgUrl,
+//     };
+    
+//     await fetch("http://localhost:3000/restaurants", {
+//         method: "POST",
+//         body: JSON.stringify(newPlace),
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//         },
+//     });
+//     showRestaurantInfo(); // for immediate page change without page refresh!!!
+//     console.log("success");
+// }; // with dynamicness
+
+
+// const createNewRestaurant = async (name, address, imgUrl) => {
+    
+//     const newPlace = {
+//         name,
+//         address,
+//         imgUrl,
+//     };
+    
+//     await fetch("http://localhost:3000/restaurants", {
+//         method: "POST",
+//         body: JSON.stringify(newPlace),
+//         headers: {
+//             Accept: "application/json",
+//             "Content-Type": "application/json",
+//         },
+//     });
+
+//     console.log("success");
+//     showRestaurantInfo(); // for immediate page change without page refresh!!!
+// }; // with dynamicness
+
+const getRestaurants = async () => {
+    const response = await fetch("http://localhost:3000/restaurants");
+    const restaurants = await response.json();
+    return restaurants;
+};
+
+const getReviews = async () => {
+    const response = await fetch("http://localhost:3000/reviews");
+    const reviews = await response.json();
+    return reviews;
+};
+
+const createNewReview2 = async (restaurantId, stars, text) => {
     
     const newReview = {
         restaurantId,
         stars,
-        text,
-        id,
+        text
     };
     
     await fetch("http://localhost:3000/reviews", {
@@ -109,78 +213,21 @@ const createNewReview = async (restaurantId, stars, text, id) => {
             "Content-Type": "application/json",
         },
     });
-}; // with dynamicness
 
-const createNewReview2 = async (id, restaurantId, stars, text) => {
-    
-    const newReview = {
-        id,
-        restaurantId,
-        stars,
-        text,
-    };
-    
-    await fetch("http://localhost:3000/reviews", {
-        method: "POST",
-        body: JSON.stringify(newReview),
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-    });
-    showRestaurantInfo(); // for immediate page change without page refresh!!!
-    console.log("success");
-}; // with dynamicness
-
-const NewRestaurant = async (name, address, imgUrl) => {
-    
-    const newPlace = {
-        name,
-        address,
-        imgUrl,
-    };
-    
-    await fetch("http://localhost:3000/restaurants", {
-        method: "POST",
-        body: JSON.stringify(newPlace),
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-    });
     showRestaurantInfo(); // for immediate page change without page refresh!!!
     console.log("success");
 }; // with dynamicness
 
 
-const createNewRestaurant = async (name, address, imgUrl) => {
-    
-    const newPlace = {
-        name,
-        address,
-        imgUrl,
-    };
-    
-    await fetch("http://localhost:3000/restaurants", {
-        method: "POST",
-        body: JSON.stringify(newPlace),
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-    });
-
-    console.log("success");
-    showRestaurantInfo(); // for immediate page change without page refresh!!!
-}; // with dynamicness
-
-
+let userStars;
+let userReviewFormText;
+let submitForm;
+let restaurants;
 
 const showRestaurantInfo = async () => {
     const result = document.getElementsByClassName("result")[0];
     const restaurantsInfo = await getRestaurants();
     const restaurantReviews = await getReviews();
-    //const postReviews = await createNewReview2();
         
         const restaurantWithOverallRatings = restaurantsInfo.map((restaurants) => {
 
@@ -198,7 +245,11 @@ const showRestaurantInfo = async () => {
                 starAverageRating
             };
 
-        }).sort((a, b) => b.starAverageRating - a.starAverageRating).map((restaurants) => {
+        });
+        
+        const restaurantSorter = restaurantWithOverallRatings.sort((a, b) => b.starAverageRating - a.starAverageRating);
+        
+        const showRestaurants = restaurantSorter.map((restaurants) => {
 
             const starFilter2 = restaurantReviews.filter((reviews) => {
                 return restaurants.id === reviews.restaurantId;
@@ -248,7 +299,7 @@ const showRestaurantInfo = async () => {
                 userReviewForm.classList.toggle("show");
             });
 
-            let userReviewForm = document.createElement("div");
+            let userReviewForm = document.createElement("form");
             userReviewForm.classList.add("userReviewForm");
             userReviewForm.classList.add("hide");
             infoBox.appendChild(userReviewForm);
@@ -258,7 +309,7 @@ const showRestaurantInfo = async () => {
             userReviewFormStars.innerHTML = "Stars: ";
             userReviewForm.appendChild(userReviewFormStars);
 
-            let userStars = document.createElement("input");
+            userStars = document.createElement("input");
             userStars.classList.add("userStars");
             userStars.setAttribute("placeholder", "1 to 5");
             userStars.setAttribute("type", "number");
@@ -271,31 +322,27 @@ const showRestaurantInfo = async () => {
             reviewHeader.innerHTML = "Write your own review...";
             userReviewForm.appendChild(reviewHeader);
 
-            let userReviewFormText = document.createElement("textarea");
+            userReviewFormText = document.createElement("textarea");
             userReviewFormText.classList.add("userReviewFormText");
             userReviewFormText.setAttribute("placeholder", "Type in your opinion");
             userReviewFormText.setAttribute("type", "textarea");
             userReviewFormText.setAttribute("maxlength", "5000");
             userReviewFormText.setAttribute("rows", "50");
             userReviewFormText.setAttribute("cols", "10");
-            userReviewFormText.setAttribute("onfocus", "this.value=''");
-            userReviewFormText.setAttribute("draggable", "false");
             userReviewForm.appendChild(userReviewFormText);
 
-            let submitForm = document.createElement("input");
+            submitForm = document.createElement("input");
             submitForm.classList.add("submitForm");
             submitForm.setAttribute("type", "submit");
             submitForm.setAttribute("value", "Submit");
             userReviewForm.appendChild(submitForm);
             submitForm.addEventListener("click", () => {
-                //const postReviews = await createNewReview2();
-                //createNewReview2();
-                createNewReview2(userStars.value, userReviewFormText.value);
-            });
+
+                const nextReview = createNewReview2(restaurants.id, userStars.value, userReviewFormText.value);
+                return nextReview;
+            }); 
 
 
-
-    
 
 
         });
