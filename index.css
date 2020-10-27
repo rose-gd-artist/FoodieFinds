@@ -101,11 +101,25 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+.deleteButton {
+    color:#fff;
+    background-color: #c50000;
+    width: 5.25vw;
+    height: 2.75vw;
+    margin: 1vw 4%;
+    font-size: 2vw;
+    font-family: minion-3-display, serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 0.5vw 1vw;
+    border-radius: 0.5vw;
+    border: none;
+}
 .reviewButton {
     color:#fff;
     width: 5.75vw;
     height: 2vw;
-    margin: 2vw 4% 1vw;
+    margin: 3vw 4% 1vw;
     background-color: #ec7d4c;
     font-size: 2vw;
     font-family: minion-3-display, serif;
