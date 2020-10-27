@@ -247,6 +247,10 @@ const showRestaurantInfo = async () => {
         
             const starAverageRating = starMapper.reduce((a, b) => (a + b), 0) / starMapper.length;
 
+            // if(starAverageRating.endsWith(0)){
+            //     starAverageRating = starAverageRating.toFixed(1);
+            // };
+
             return {
                 ...restaurants,
                 starAverageRating
@@ -347,8 +351,10 @@ const showRestaurantInfo = async () => {
                 event.preventDefault();
                 const reviewText = document.getElementsByClassName("userReviewFormText")[0].value;
                 const reviewStars = document.getElementsByClassName("userStars")[0].value;
-                const nextReview = createNewReview2(restaurants.id, parseInt(reviewStars), reviewText);
-                showRestaurantInfo();
+                if(reviewText && reviewStars){
+                    const nextReview = createNewReview2(restaurants.id, parseInt(reviewStars), reviewText);
+                    showRestaurantInfo();
+                };
             };
             submitForm.addEventListener("click", newestReview);
 
